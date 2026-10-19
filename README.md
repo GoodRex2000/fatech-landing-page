@@ -1,1 +1,1 @@
-# fatech-landing-page-
+# fatech-landing-page
