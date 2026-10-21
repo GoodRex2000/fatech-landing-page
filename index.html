@@ -3,66 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FAtech: projeto do hackathon do IFC Concórdia para organizar registros de vistorias ambientais.">
-  <title>FAtech — Vistorias ambientais</title>
+  <meta name="theme-color" content="#123f32">
+  <meta name="description" content="Do campo ao mapa, sem perder os detalhes. Conheça a FAtech: fotos, relatos e localização juntos para simplificar suas vistorias ambientais.">
+  <title>FAtech — Do campo ao mapa. Sem perder nada.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header>
-    <span class="marca-evento">Hackathon · IFC Concórdia</span>
-    <h1>FAtech</h1>
-    <p>Organizando as informações do campo.</p>
-    <div class="barra-leitura" role="progressbar" aria-label="Progresso da leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <span id="progresso"></span>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="m8 5 1-2h6l1 2h4v15H4V5Z"/><circle cx="12" cy="12" r="4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24"><path d="M3 3 21 21M8.5 8.5A12 12 0 0 1 21 9M3 9l2-1M7 13a8 8 0 0 1 6-2M10 17a3 3 0 0 1 4 0M12 21h.01"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16M15 5v16"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m3 7 9-5 9 5-9 5ZM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5ZM20 2v4M18 4h4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C6 2 2 8 5 15c3 7 15 5 15-12ZM3 22 15 10"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#inicio" aria-label="FAtech, início"><img src="assets/favicon.svg" width="36" height="36" alt=""><span>FA<span class="brand-light">tech</span><span class="brand-dot">.</span></span></a>
+      <nav aria-label="Navegação principal"><a href="#recursos">Por que FAtech?</a><a href="#demonstracao">Na prática</a></nav>
+      <a class="button button-dark nav-cta" href="#demonstracao">Explorar o app <svg class="icon"><use href="#i-arrow-up"/></svg></a>
     </div>
+    <div class="reading-track" aria-hidden="true"><span id="progresso"></span></div>
   </header>
 
-  <main>
-    <section>
-      <h2>O que é a FAtech?</h2>
-      <p>A FAtech é um aplicativo para ajudar em vistorias ambientais. Ele reúne fotos, relatos e localização no mesmo registro.</p>
-      <p>Desenvolvemos essa ideia durante o hackathon do IFC Concórdia.</p>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-image" data-parallax>
+        <img src="https://images.unsplash.com/photo-1591081658714-f576fb7ea3ed?auto=format&amp;fit=crop&amp;w=2000&amp;q=85" width="2000" height="1333" alt="Vista aérea de um rio cercado por uma floresta verde" fetchpriority="high">
+      </div>
+      <div class="hero-shade"></div>
+      <div class="hero-topline"><span class="eyebrow"><span class="status-dot"></span> TECNOLOGIA QUE VAI A CAMPO</span><span class="hero-edition">NATUREZA + INTELIGÊNCIA</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <h1 id="hero-title">Sua vistoria.<br>Tudo <em>no lugar.</em></h1>
+          <p>Do primeiro registro ao mapa final.<br>Menos retrabalho. Mais campo.</p>
+          <a class="button button-lime" href="#demonstracao">Ver demonstração <span class="button-icon"><svg class="icon"><use href="#i-arrow-up"/></svg></span></a>
+          <div class="hero-proof"><span class="proof-line"></span> FEITO PARA QUEM CUIDA DO AMBIENTE</div>
+        </div>
+        <div class="hero-product" aria-label="Prévia ilustrativa da FAtech">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-phone" data-tilt>
+            <div class="phone-notch"></div>
+            <div class="phone-status"><span>9:41</span><span class="phone-signal">▮▮▮ <span>▰</span></span></div>
+            <div class="app-header"><span class="mini-brand">FAtech<span>.</span></span><span class="app-avatar">LF</span></div>
+            <div class="app-greeting"><span>BOM DIA, PROFISSIONAL</span><strong>Vamos a campo<span>?</span></strong></div>
+            <div class="phone-map">
+              <img src="assets/terrain.svg" alt="" width="640" height="640">
+              <span class="map-label">ÁREA DE VISTORIA</span>
+              <span class="preview-pin preview-pin-one"><svg class="icon"><use href="#i-pin"/></svg></span>
+              <span class="preview-pin preview-pin-two"><svg class="icon"><use href="#i-pin"/></svg></span>
+              <span class="preview-pin preview-pin-three"><svg class="icon"><use href="#i-pin"/></svg></span>
+              <span class="map-scale">MAPA ILUSTRATIVO</span>
+            </div>
+            <div class="app-list-heading"><strong>Seus registros</strong><span>Hoje</span></div>
+            <div class="app-record"><span class="record-icon"><svg class="icon"><use href="#i-leaf"/></svg></span><span><strong>Vegetação ciliar</strong><small>Foto, relato e localização</small></span><svg class="icon record-check"><use href="#i-check"/></svg></div>
+            <div class="app-record"><span class="record-icon"><svg class="icon"><use href="#i-pin"/></svg></span><span><strong>Ponto de observação</strong><small>Salvo neste dispositivo</small></span><svg class="icon record-check"><use href="#i-check"/></svg></div>
+            <div class="app-new-record"><span>+</span> Novo registro</div>
+            <div class="phone-home"></div>
+          </div>
+          <div class="floating-note note-saved"><span class="note-icon"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>Registro salvo.</strong><small>Mesmo sem sinal.</small></span></div>
+          <div class="floating-note note-map"><span class="note-icon"><svg class="icon"><use href="#i-layers"/></svg></span><span><strong>Do campo ao QGIS.</strong><small>Os detalhes vão junto.</small></span></div>
+          <span class="product-caption">INTERFACE ILUSTRATIVA · MVP</span>
+        </div>
+      </div>
+      <div class="hero-bottom"><div class="hero-tags"><span><svg class="icon"><use href="#i-camera"/></svg> Fotos + relatos</span><span><svg class="icon"><use href="#i-pin"/></svg> GPS integrado</span><span><svg class="icon"><use href="#i-offline"/></svg> Registros offline</span></div><a class="scroll-cue" href="#recursos" aria-label="Conhecer os benefícios"><span>EXPLORE</span><svg class="icon"><use href="#i-arrow"/></svg></a></div>
     </section>
 
-    <section>
-      <h2>Qual problema queremos resolver?</h2>
-      <p>Ao conversar com profissionais da Lago Azul, nossa equipe percebeu que organizar os registros de campo e preparar os pontos para o mapa dá bastante trabalho.</p>
-      <p>Nossa proposta é manter as informações de cada ocorrência juntas desde a coleta, facilitando a consulta e a exportação dos pontos para o QGIS.</p>
+    <div class="field-strip" aria-hidden="true"><span>MENOS PAPEL.</span><svg class="icon"><use href="#i-spark"/></svg><span>MAIS PRESENÇA.</span><svg class="icon"><use href="#i-spark"/></svg><span>MAIS NATUREZA.</span></div>
+
+    <section class="benefits section-wrap" id="recursos" aria-labelledby="benefits-title">
+      <div class="section-heading reveal"><div><span class="eyebrow section-kicker">01 / SEU NOVO JEITO DE IR A CAMPO</span><h2 id="benefits-title">O campo é complexo.<br><span>Seu trabalho não precisa ser.</span></h2></div><p>O essencial da vistoria.<br>Conectado, do início ao fim.</p></div>
+      <div class="benefit-grid">
+        <article class="benefit-card card-capture reveal">
+          <div class="card-top"><span class="card-number">01</span><svg class="icon"><use href="#i-camera"/></svg></div>
+          <div class="capture-art" aria-hidden="true"><div class="capture-photo"><img src="https://images.unsplash.com/photo-1568742994439-938fa12de093?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="" width="700" height="500" loading="lazy"><span><svg class="icon"><use href="#i-camera"/></svg> registro_01.jpg</span></div><div class="capture-audio"><span class="audio-dot"></span><span class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Relato em áudio</span></div></div>
+          <h3>Cada detalhe conta.</h3><p>Fotos, texto e áudio.<br>Tudo no mesmo registro.</p><span class="card-bottom">REGISTRE SEM PERDER NADA <svg class="icon"><use href="#i-arrow-up"/></svg></span>
+        </article>
+        <article class="benefit-card card-offline reveal" style="--delay:100ms">
+          <div class="card-top"><span class="card-number">02</span><svg class="icon"><use href="#i-offline"/></svg></div>
+          <div class="offline-art" aria-hidden="true"><div class="offline-ring ring-outer"></div><div class="offline-ring ring-middle"></div><div class="offline-core"><svg class="icon"><use href="#i-check"/></svg></div><span class="offline-label"><span class="status-dot"></span> SALVO NO DISPOSITIVO</span></div>
+          <h3>Sem sinal. Sem pausa.</h3><p>A conexão pode ficar para trás.<br>Seus registros continuam com você.</p><span class="card-bottom">CONTINUE EM CAMPO <svg class="icon"><use href="#i-arrow-up"/></svg></span>
+        </article>
+        <article class="benefit-card card-export reveal" style="--delay:200ms">
+          <div class="card-top"><span class="card-number">03</span><svg class="icon"><use href="#i-map"/></svg></div>
+          <div class="export-art" aria-hidden="true"><div class="export-layer layer-back"></div><div class="export-layer layer-front"><svg class="icon"><use href="#i-pin"/></svg></div><span class="file-pill"><svg class="icon"><use href="#i-download"/></svg> vistoria.kml <span>↗</span></span></div>
+          <h3>Do ponto ao mapa.</h3><p>Localização organizada.<br>Exporte em KML para o QGIS.</p><span class="card-bottom">LEVE O CAMPO COM VOCÊ <svg class="icon"><use href="#i-arrow-up"/></svg></span>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Principais funções</h2>
-      <ul>
-        <li>Registrar ocorrências com fotos, texto ou áudio.</li>
-        <li>Capturar a localização pelo GPS.</li>
-        <li>Salvar os registros no celular, mesmo sem internet.</li>
-        <li>Usar IA para transcrever áudios e sugerir campos, com revisão do profissional.</li>
-        <li>Mostrar os pontos no mapa e exportar um arquivo KML para o QGIS.</li>
-      </ul>
-      <p class="observacao">A IA precisa estar configurada. Ela e o mapa-base dependem de conexão. O MVP não sincroniza dados entre celulares.</p>
+    <section class="demo-section" id="demonstracao" aria-labelledby="demo-title">
+      <div class="section-wrap demo-layout">
+        <div class="demo-copy reveal"><span class="eyebrow section-kicker">02 / MENOS EXPLICAÇÃO. MAIS AÇÃO.</span><h2 id="demo-title">Seu próximo<br>registro começa<br><em>aqui.</em></h2><p>Explore uma vistoria, do primeiro<br>detalhe ao arquivo para o mapa.</p>
+          <div class="demo-tabs" role="tablist" aria-label="Etapas da demonstração" aria-orientation="vertical">
+            <button class="demo-tab is-active" id="tab-register" type="button" role="tab" aria-selected="true" aria-controls="panel-register" data-step="register"><span class="step-number">01</span><span><strong>Registre o que importa</strong><small>Uma foto. Um relato. Um registro.</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+            <button class="demo-tab" id="tab-locate" type="button" role="tab" aria-selected="false" aria-controls="panel-locate" tabindex="-1" data-step="locate"><span class="step-number">02</span><span><strong>Cada detalhe, no seu ponto</strong><small>Explore as ocorrências no mapa.</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+            <button class="demo-tab" id="tab-export" type="button" role="tab" aria-selected="false" aria-controls="panel-export" tabindex="-1" data-step="export"><span class="step-number">03</span><span><strong>Pronto para ir além</strong><small>Do registro para o QGIS.</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          </div>
+          <span class="demo-disclaimer"><span class="status-dot"></span> Demonstração ilustrativa com dados fictícios.</span>
+        </div>
+        <div class="demo-stage reveal" style="--delay:100ms">
+          <div class="stage-grid" aria-hidden="true"></div><span class="stage-label">FAtech / EXPERIÊNCIA INTERATIVA</span>
+          <div class="demo-app">
+            <div class="demo-app-top"><span class="mini-brand">FAtech<span>.</span></span><span class="demo-badge">DEMO</span></div>
+            <section class="demo-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" tabindex="0">
+              <div class="panel-heading"><span>NOVO REGISTRO</span><h3>Um olhar para o campo.</h3></div>
+              <div class="media-controls" role="group" aria-label="Tipo de registro"><button type="button" class="media-button is-active" data-media="photo" aria-pressed="true"><svg class="icon"><use href="#i-camera"/></svg> Foto</button><button type="button" class="media-button" data-media="text" aria-pressed="false"><svg class="icon"><use href="#i-text"/></svg> Relato</button><button type="button" class="media-button" data-media="audio" aria-pressed="false"><svg class="icon"><use href="#i-mic"/></svg> Áudio</button></div>
+              <div class="media-preview" id="media-photo"><img src="https://images.unsplash.com/photo-1568742994439-938fa12de093?auto=format&amp;fit=crop&amp;w=700&amp;q=80" width="700" height="500" alt="Exemplo ilustrativo de vegetação ao redor de um rio" loading="lazy"><span class="photo-tag"><svg class="icon"><use href="#i-camera"/></svg> Vegetação ciliar</span><span class="viewfinder corner-tl"></span><span class="viewfinder corner-tr"></span><span class="viewfinder corner-bl"></span><span class="viewfinder corner-br"></span></div>
+              <div class="media-preview text-preview" id="media-text" hidden><svg class="icon"><use href="#i-text"/></svg><span>RELATO DE CAMPO · EXEMPLO</span><p>Vegetação ciliar observada na margem do rio. Registro fotográfico e localização anexados para revisão.</p><span class="text-preview-footer"><svg class="icon"><use href="#i-check"/></svg> Os detalhes ficam juntos.</span></div>
+              <div class="media-preview audio-preview" id="media-audio" hidden><span class="audio-symbol"><svg class="icon"><use href="#i-mic"/></svg></span><div class="large-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>Sua voz também é um registro.</strong><small>Prévia visual · sem gravação ou reprodução</small><span class="ai-hint"><svg class="icon"><use href="#i-spark"/></svg> IA auxilia na transcrição*</span></div>
+              <div class="demo-location"><svg class="icon"><use href="#i-pin"/></svg><span>Ponto 01 · Vegetação ciliar<small>Localização ilustrativa anexada</small></span><span class="location-check"><svg class="icon"><use href="#i-check"/></svg></span></div>
+              <button class="button button-dark demo-action" type="button" id="save-record">Simular registro <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <p class="action-status" id="save-status" role="status"></p>
+            </section>
+            <section class="demo-panel" id="panel-locate" role="tabpanel" aria-labelledby="tab-locate" tabindex="0" hidden>
+              <div class="panel-heading"><span>VISÃO DO CAMPO</span><h3>Um mapa. Todos os detalhes.</h3></div>
+              <div class="interactive-map"><img src="assets/terrain.svg" alt="Mapa esquemático da área fictícia de vistoria" width="640" height="640"><span class="map-label">TOQUE EM UM PONTO</span><div class="map-route" aria-hidden="true"></div><button class="map-point point-one is-selected" type="button" data-point="0" aria-label="Ponto 1: Vegetação ciliar" aria-pressed="true">1</button><button class="map-point point-two" type="button" data-point="1" aria-label="Ponto 2: Margem do rio" aria-pressed="false">2</button><button class="map-point point-three" type="button" data-point="2" aria-label="Ponto 3: Trilha de acesso" aria-pressed="false">3</button><span class="map-scale">MAPA ILUSTRATIVO · SEM GPS REAL</span></div>
+              <div class="point-detail" aria-live="polite"><span class="record-icon"><svg class="icon"><use href="#i-leaf"/></svg></span><div><span id="point-label">PONTO 01</span><h4 id="point-title">Vegetação ciliar</h4><p id="point-description">Foto e relato sobre a vegetação da margem.</p></div></div>
+              <button class="button button-dark demo-action" type="button" data-go-step="export">Levar para o mapa <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </section>
+            <section class="demo-panel" id="panel-export" role="tabpanel" aria-labelledby="tab-export" tabindex="0" hidden>
+              <div class="panel-heading"><span>EXPORTAÇÃO PARA O QGIS</span><h3>O campo vai com você.</h3></div>
+              <div class="export-select-heading"><span>SELECIONE OS REGISTROS</span><button type="button" id="select-all">Selecionar todos</button></div>
+              <fieldset class="export-records"><legend class="sr-only">Registros da exportação ilustrativa</legend><label><input type="checkbox" name="export-record" value="0" checked><span class="checkbox-ui"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>Vegetação ciliar</strong><small>Ponto 01 · foto + relato</small></span><svg class="icon"><use href="#i-leaf"/></svg></label><label><input type="checkbox" name="export-record" value="1" checked><span class="checkbox-ui"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>Margem do rio</strong><small>Ponto 02 · foto + áudio</small></span><svg class="icon"><use href="#i-pin"/></svg></label><label><input type="checkbox" name="export-record" value="2" checked><span class="checkbox-ui"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>Trilha de acesso</strong><small>Ponto 03 · relato</small></span><svg class="icon"><use href="#i-map"/></svg></label></fieldset>
+              <div class="export-summary"><span class="kml-icon">KML</span><span><strong>vistoria_exemplo.kml</strong><small id="export-count">3 registros selecionados</small></span><span class="qgis-badge">QGIS ↗</span></div>
+              <button class="button button-dark demo-action" type="button" id="export-records">Simular exportação <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <p class="action-status" id="export-status" role="status"></p>
+              <div class="export-success" id="export-success" hidden><span class="success-check"><svg class="icon"><use href="#i-check"/></svg></span><strong>Do campo para o próximo passo.</strong><p id="export-success-detail">Prévia de exportação concluída.</p><span>Simulação · nenhum arquivo é gerado.</span></div>
+            </section>
+            <div class="demo-app-bottom"><span class="status-dot"></span> SEUS DETALHES, SEMPRE POR PERTO.</div>
+          </div>
+          <span class="stage-bottom-label"><svg class="icon"><use href="#i-spark"/></svg> CLIQUE. EXPLORE. DESCUBRA.</span>
+        </div>
+      </div>
+      <noscript><p class="noscript-note">A FAtech reúne fotos, relatos e localização, salva registros no celular e exporta pontos em KML para o QGIS. Ative o JavaScript para experimentar a demonstração interativa.</p></noscript>
     </section>
 
-    <section>
-      <h2>Como pode ajudar?</h2>
-      <p>Queremos facilitar a organização dos registros, preservar os detalhes da visita e reduzir o retrabalho na preparação dos mapas. Esses benefícios ainda serão avaliados com o uso do MVP.</p>
-    </section>
+    <section class="closing-section section-wrap" aria-labelledby="closing-title"><div class="closing-card reveal"><img src="https://images.unsplash.com/photo-1568742994439-938fa12de093?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="" width="1600" height="1000" loading="lazy"><div class="closing-shade"></div><div class="closing-content"><span class="eyebrow">MENOS RETRABALHO. MAIS PROPÓSITO.</span><h2 id="closing-title">Cuide do campo.<br><em>A gente conecta os detalhes.</em></h2><a class="button button-lime" href="#demonstracao">Conheça a FAtech na prática <span class="button-icon"><svg class="icon"><use href="#i-arrow-up"/></svg></span></a></div><span class="closing-footnote"><svg class="icon"><use href="#i-leaf"/></svg> TECNOLOGIA A FAVOR DO AMBIENTE.</span></div></section>
 
-    <section>
-      <h2>Para quem é?</h2>
-      <p>Para profissionais que fazem vistorias, equipes que trabalham com mapas e relatórios e empresas de consultoria ambiental.</p>
-    </section>
-
-
-    <section>
-      <h2>Grupo 13 - Lázaro Fornari da Silva</h2>
-      <a href="https://github.com/GoodRex2000/fatech-landing-page" target="_blank" rel="noopener noreferrer">Ver o projeto no GitHub</a>
-    </section>
+    <section class="mvp-section section-wrap" aria-label="Informações sobre o projeto"><details><summary><span><span class="mvp-pill">MVP</span> Uma ideia que nasceu no campo.</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="mvp-content"><p>Desenvolvida no hackathon do IFC Concórdia, a FAtech propõe organizar vistorias ambientais em um só lugar. Os benefícios ainda serão avaliados com o uso do MVP.</p><p>Os registros podem ser salvos no celular sem internet. O mapa-base e a IA dependem de conexão; a IA também exige configuração e revisão profissional. O MVP não sincroniza dados entre celulares.</p><p>As telas, os pontos e as ações desta página são ilustrativos. A demonstração não grava áudio, coleta localização, salva dados ou gera arquivos.</p></div></details></section>
   </main>
 
-  <footer>
-    <p>Grupo 13 - Lázaro Fornari da Silva · Hackathon do IFC Concórdia · 2026</p>
-  </footer>
-
-  <script src="js/script.js" defer></script>
+  <footer class="site-footer section-wrap"><div class="footer-top"><a class="brand" href="#inicio" aria-label="FAtech, voltar ao início"><img src="assets/favicon.svg" width="32" height="32" alt=""><span>FA<span class="brand-light">tech</span><span class="brand-dot">.</span></span></a><span>Do campo ao mapa. Sem perder nada.</span><a class="github-link" href="https://github.com/GoodRex2000/fatech-landing-page" target="_blank" rel="noopener noreferrer">Projeto no GitHub <svg class="icon"><use href="#i-arrow-up"/></svg></a></div><div class="footer-bottom"><span>Grupo 13 · Lázaro Fornari da Silva</span><span>Hackathon · IFC Concórdia · 2026</span><a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Fotos: Unsplash ↗</a></div></footer>
 </body>
 </html>
